@@ -7,10 +7,6 @@ const connectToDB = async () => {
       useUnifiedTopology: true,
       family: 4,
     });
-    // const conn = await mongoose.connect(
-    //   "mongodb+srv://million12tenkir:zSXAZsZNRLhLVmrv@churchmgmtsystem.cyg16ou.mongodb.net/test",
-    //   { useNewUrlParser: true, useUnifiedTopology: true, family: 4 }
-    // );
     console.log(`MongoDB connected: ${conn.connection.host}`);
   } catch (error) {
     console.log(error);
@@ -18,5 +14,3 @@ const connectToDB = async () => {
   }
 };
 module.exports = connectToDB;
-
-// mongodb+srv://million12tenkir:<password>@churchmgmtsystem.cyg16ou.mongodb.net/?retryWrites=true&w=majority
