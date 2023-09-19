@@ -64,7 +64,7 @@ export default function CollapsibleTable() {
 
   let churchBranchRow = [];
 
-  if (churchBranchs.length !== 0) {
+  if (churchBranchs.length > 0) {
     churchBranchs.forEach((eachChurchBranch) => {
       churchBranchRow.push({
         _id: eachChurchBranch._id,

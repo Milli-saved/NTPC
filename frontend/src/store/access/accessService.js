@@ -22,7 +22,6 @@ const deleteAccess = async (id) => {
 
 // get one specific access
 const getOneAccess = async (id) => {
-  console.log("the id of the member. ", id);
   const response = await axios.get(API_URL + id);
   return response.data;
 };

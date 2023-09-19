@@ -41,7 +41,6 @@ export default function CollapsibleTable() {
     setMemberId(row._id);
     dispatch(getOneAccess(row._id));
     setSelectedMember(row);
-    console.log("this is the ROW: ", row);
   };
 
   const actionHandler1 = (row) => {
