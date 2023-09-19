@@ -66,14 +66,18 @@ export default function CollapsibleTable() {
 
   const updateHandler = () => {
     let data = {
+      ...access[0],
       member: memberId,
       canAddMembers,
       canAddProgram,
       canAddDepartment,
       canAddChurch,
     };
-    console.log("this is me: ", typeof data.canAddChurch);
     dispatch(updateAccess(data));
+    setTimeout(() => {
+      dispatch(getAllMembers());
+      setShow(false);
+    }, 1000);
   };
 
   const updateMemberRole = () => {
@@ -84,10 +88,9 @@ export default function CollapsibleTable() {
     };
     dispatch(updateMember(memberData));
     setTimeout(() => {
-      // resetForm();
       dispatch(getAllMembers());
       setShow1(false);
-    }, 3000);
+    }, 1000);
   };
 
   // Column
@@ -241,7 +244,7 @@ export default function CollapsibleTable() {
                       name="addMember"
                       required
                       onChange={(e) => setCanAddMember(e.target.value)}
-                      value={access[0] ? access[0].canAddMembers : false}
+                      value={canAddMembers}
                     >
                       <option></option>
                       <option value={true}>True</option>
@@ -256,7 +259,7 @@ export default function CollapsibleTable() {
                       name="addChurch"
                       required
                       onChange={(e) => setCanAddChurch(e.target.value)}
-                      value={access[0] ? access[0].canAddChurch : false}
+                      value={canAddChurch}
                     >
                       <option></option>
                       <option value={true}>True</option>
@@ -271,7 +274,7 @@ export default function CollapsibleTable() {
                       name="canAddProgram"
                       required
                       onChange={(e) => setCanAddProgram(e.target.value)}
-                      value={access[0] ? access[0].canAddProgram : false}
+                      value={canAddProgram}
                     >
                       <option></option>
                       <option value={true}>True</option>
@@ -287,7 +290,7 @@ export default function CollapsibleTable() {
                       name="canAddDepartment"
                       required
                       onChange={(e) => setCanAddDepartment(e.target.value)}
-                      value={access[0] ? access[0].canAddDepartment : false}
+                      value={canAddDepartment}
                     >
                       <option></option>
                       <option value={true}>True</option>
@@ -406,6 +409,7 @@ export default function CollapsibleTable() {
         <Button
           className="text-center btn-primary btn-icon mt-lg-0 mt-md-0 mt-3"
           type="button"
+          disabled={access[0] ? !access[0].canAddMembers : true}
         >
           <i className="btn-inner">
             <svg

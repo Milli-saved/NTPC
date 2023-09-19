@@ -105,7 +105,7 @@ export default function CollapsibleTable() {
           className="text-center btn-primary btn-icon mt-lg-0 mt-md-0 mt-3"
           type="button"
           onClick={handleShow}
-          disabled={access[0] ? access[0].canAddDepartment : false}
+          disabled={access[0] ? !access[0].canAddDepartment : true}
         >
           <i className="btn-inner">
             <svg
