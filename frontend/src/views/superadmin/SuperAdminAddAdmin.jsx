@@ -25,7 +25,6 @@ const SuperAdminAddAdmin = () => {
     setShow(true);
     setSelectedMember(row);
     setRole(row.role);
-    console.log("this is the ROW: ", row);
   };
 
   const roleHanlder = (e) => {

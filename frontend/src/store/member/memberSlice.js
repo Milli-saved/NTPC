@@ -17,7 +17,6 @@ export const register = createAsyncThunk(
   "member/register",
   async (memberData, thunkAPI) => {
     try {
-      console.log("checkhere,", memberData);
       return await memberServices.register(memberData);
     } catch (error) {
       const message =

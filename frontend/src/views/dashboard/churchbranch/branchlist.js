@@ -98,7 +98,6 @@ export default function CollapsibleTable() {
       churchBranchLeadPastor,
     };
     dispatch(registerNewChurchBranch(data));
-    console.log("data: ", data);
   };
 
   return (

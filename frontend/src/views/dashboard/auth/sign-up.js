@@ -95,7 +95,6 @@ const SignUp = () => {
         memberType,
       };
     }
-    console.log("member Data: ", memberData);
     dispatch(register(memberData));
     navigate("/");
   };

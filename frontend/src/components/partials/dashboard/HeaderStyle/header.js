@@ -27,7 +27,6 @@ const Header = memo((props) => {
   const navbarHide = useSelector(SettingSelector.navbar_show); // array
   const headerNavbar = useSelector(SettingSelector.header_navbar);
   const { member } = useSelector((state) => state.member);
-  // console.log("member in header : ", member);
   useEffect(() => {
     if (member === null) {
       navigate("/");

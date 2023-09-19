@@ -19,11 +19,9 @@ const FormWizard = () => {
     const numberOfChildrenHandler = (e) => {
         setNoOfChildren(e.target.value);
     };
-    console.log("number", noOfChildren);
     let childInputFields = [];
     if (noOfChildren !== 0) {
         for (let i = 0; i < noOfChildren; i++) {
-            console.log("iteration in no of child", i);
             childInputFields.push(
                 <div className="col-md-6">
                     <div className="form-group">

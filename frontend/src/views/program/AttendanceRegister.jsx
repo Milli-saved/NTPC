@@ -35,7 +35,6 @@ const AttendanceRegister = () => {
     }
   };
   const handleError = (err) => {
-    console.log("Error: ", err);
     setError(err);
   };
   const scanButton = () => {

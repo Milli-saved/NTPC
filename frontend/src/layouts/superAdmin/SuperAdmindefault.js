@@ -5,7 +5,6 @@ import { useLocation, Outlet, Navigate } from "react-router-dom";
 import { ShepherdTourContext } from "react-shepherd";
 
 //react-bootstrap
-import { Button } from "react-bootstrap";
 
 // header
 import Header from "../../components/partials/dashboard/HeaderStyle/header";
@@ -14,8 +13,6 @@ import Header from "../../components/partials/dashboard/HeaderStyle/header";
 import SubHeader from "../../components/partials/dashboard/HeaderStyle/sub-header";
 
 //sidebar
-// import Sidebar from "../../components/partials/dashboard/SidebarStyle/sidebar";
-// import SidebarPro from "../../views/program/SidebarPro";
 import SideBarSuperAdmin from "../../views/superadmin/SideBarSuperAdmin";
 
 //footer
@@ -26,8 +23,6 @@ import Footer from "../../components/partials/dashboard/FooterStyle/footer";
 
 //seetingoffCanvas
 import SettingOffCanvas from "../../components/setting/SettingOffCanvas";
-
-import Loader from "../../components/Loader";
 
 // Import selectors & action from setting store
 import * as SettingSelector from "../../store/setting/selectors";
@@ -59,7 +54,6 @@ const ProDefault = memo((props) => {
         <Navigate to="/" />
       ) : (
         <Fragment>
-          {/* <Loader /> */}
           <SideBarSuperAdmin app_name={appName} />
           <Tour />
           <main className="main-content">
@@ -69,7 +63,6 @@ const ProDefault = memo((props) => {
             </div>
             <div className="py-0 conatiner-fluid content-inner mt-n5">
               <Outlet />
-              {/* I will add the qr scanner here. */}
             </div>
             <div className="btn-download "></div>
             <Footer />

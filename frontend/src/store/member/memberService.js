@@ -4,7 +4,6 @@ const API_URL = "/api/v1/members/";
 
 // register member
 const register = async (memberData) => {
-  console.log("here and there:", memberData);
   const response = await axios.post(API_URL + "register", memberData);
   if (response.data) {
     return response.data;
@@ -18,7 +17,6 @@ const getAllMembers = async () => {
 
 // login
 const login = async (memberData) => {
-  console.log("in services: ", memberData);
 
   const response = await axios.post(API_URL + "login", memberData);
   if (response.data) {
@@ -35,9 +33,7 @@ const updateMember = async (data, token) => {
   //     Authorization: `Bearer ${token}`,
   //   },
   // };
-  console.log("all the data, ", data);
   let id = data.id;
-  console.log("this is the Id: ", id);
   const response = await axios.put(API_URL + data.id, data);
   return response.data;
 };

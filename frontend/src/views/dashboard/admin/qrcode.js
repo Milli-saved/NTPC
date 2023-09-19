@@ -47,7 +47,6 @@ const Widgetcard = memo((props) => {
     const navigate = useNavigate()
     const [toggler, setToggler] = useState(false);
     const { member } = useSelector((state) => state.member);
-  console.log("at the top: ", member);
 
   useEffect(() => {
     if (!member) {

@@ -14,9 +14,6 @@ import Logo from '../../components/logo';
 
 // import SidebarDark from '../../components/settingoffcanvas'
 
-// export const SidebarDark =() =>{
-
-// }
 
 
 const Sidebar = memo((props) => {

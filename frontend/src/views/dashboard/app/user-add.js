@@ -72,8 +72,6 @@ const UserAdd = () => {
           const workBook = XLSX.read(bufferArray, { type: "buffer" });
           const workSheetName = workBook.SheetNames[0];
           const workSheet = workBook.Sheets[workSheetName];
-          // console.log("up here: ", workSheet)
-          // console.log("reading data: ", workSheet.B1.w);
           workSheet.B1.w = "firstName";
           workSheet.C1.w = "middleName";
           workSheet.D1.w = "lastName";
@@ -104,7 +102,6 @@ const UserAdd = () => {
           resolve(memberData);
           setValidFile(true);
         } catch (error) {
-          console.log("the error is: ", error);
           setMessage("Invalid data type or format.");
           setValidFile(false);
           setMemberData([]);
@@ -116,7 +113,6 @@ const UserAdd = () => {
       };
       fileReader.onerror = (error) => {
         reject(error);
-        console.log("error while adding excel data, ", error);
       };
     });
     promise.then((data) => {

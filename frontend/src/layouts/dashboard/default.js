@@ -5,7 +5,6 @@ import { useLocation, Outlet, Navigate } from "react-router-dom";
 import { ShepherdTourContext } from "react-shepherd";
 
 //react-bootstrap
-import { Button, NavbarBrand } from "react-bootstrap";
 
 // header
 import Header from "../../components/partials/dashboard/HeaderStyle/header";
@@ -22,7 +21,6 @@ import Footer from "../../components/partials/dashboard/FooterStyle/footer";
 //seetingoffCanvas
 import SettingOffCanvas from "../../components/setting/SettingOffCanvas";
 
-import Loader from "../../components/Loader";
 
 // Import selectors & action from setting store
 import * as SettingSelector from "../../store/setting/selectors";
@@ -51,7 +49,6 @@ const Default = memo((props) => {
         <Navigate to="/" />
       ) : (
         <Fragment>
-          {/* <Loader /> */}
           <Sidebar app_name={appName} />
           <Tour />
           <main className="main-content">
@@ -60,7 +57,6 @@ const Default = memo((props) => {
               <SubHeader />
             </div>
             <div className="py-0 conatiner-fluid content-inner mt-n5">
-              {/* <DefaultRouter /> */}
               <Outlet />
             </div>
             <div className="btn-download "></div>

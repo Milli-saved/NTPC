@@ -137,7 +137,6 @@ class SliderTab {
   }
   updateinrtl() {
     document.addEventListener("theme_scheme_direction", (e) => {
-      console.log(e);
       const target = this.element.querySelector(".active");
       const item = target.closest(".nav-item");
       const items = Array.from(this.element.children);

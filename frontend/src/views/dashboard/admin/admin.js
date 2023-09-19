@@ -59,7 +59,6 @@ export default function ImgMediaCard() {
       programType,
       churchBranch: member.member.churchBranch,
     };
-    console.log("all the data: ", programData);
     dispatch(registerNewPro(programData));
     setTimeout(() => {
       dispatch(getPrograms());

@@ -51,7 +51,6 @@ const AttendanceDepartment = () => {
       startingDate: new Date(startingDate),
       endingDate: new Date(endingDate),
     };
-    console.log("the data: ", data);
     handleShow();
   };
 

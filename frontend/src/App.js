@@ -19,7 +19,6 @@ function App({ children }) {
   dispatch(setSetting());
   return (
     <div className="App">
-      {/* <IndexRouters /> */}
       {children}
     </div>
   );

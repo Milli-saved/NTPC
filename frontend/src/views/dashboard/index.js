@@ -79,7 +79,6 @@ const Index = memo((props) => {
   });
 
   const { member } = useSelector((state) => state.member);
-  // console.log("at the top: ", member);
 
   useEffect(() => {
     if (!member) {

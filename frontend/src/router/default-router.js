@@ -23,16 +23,6 @@ import TableData from "../views/dashboard/table/table-data";
 import ProgramCalander from "../views/program/ProgramCalander";
 import ErrorBoundary from "../views/dashboard/admin/Errorboundary";
 
-// map
-
-//extra
-// import PrivacyPolicy from '../views/dashboard/extra/privacy-policy';
-// import TermsofService from '../views/dashboard/extra/terms-of-service';
-
-//TransitionGroup
-// import { TransitionGroup, CSSTransition } from "react-transition-group";
-//Special Pages
-
 import Timeline from "../views/dashboard/special-pages/timeline";
 import Program from "../views/dashboard/special-pages/calender";
 import RtlSupport from "../views/dashboard/special-pages/RtlSupport";
@@ -41,7 +31,6 @@ import RtlSupport from "../views/dashboard/special-pages/RtlSupport";
 import Admin from "../views/dashboard/admin/admin";
 import Default from "../layouts/dashboard/default";
 import QRCode from "../views/dashboard/admin/qrcode";
-// import Absent from "../views/dashboard/app/absent/absent";
 import ProDefault from "../layouts/programs/Prodefault";
 import ProgramHome from "../views/program/ProgramHome";
 import AttendanceRegister from "../views/program/AttendanceRegister";

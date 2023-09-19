@@ -145,11 +145,6 @@ const VerticalNav = memo((props) => {
               </svg>
             </i>
             <span className="item-name">Church Branches</span>
-            {/* <i className="right-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
-                            </svg>
-                        </i> */}
           </CustomToggle>
           <Accordion.Collapse eventKey="utilities-error">
             <ul className="sub-nav">
@@ -247,11 +242,6 @@ const VerticalNav = memo((props) => {
               </svg>
             </i>
             <span className="item-name">Members</span>
-            {/* <i className="right-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
-                            </svg>
-                        </i> */}
           </CustomToggle>
           <Accordion.Collapse eventKey="sidebar-special">
             <ul className="sub-nav">
@@ -327,11 +317,6 @@ const VerticalNav = memo((props) => {
               </svg>
             </i>
             <span className="item-name">Departments</span>
-            {/* <i className="right-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
-                            </svg>
-                        </i> */}
           </CustomToggle>
           <Accordion.Collapse eventKey="sidebar-auth">
             <ul className="sub-nav">
@@ -416,11 +401,6 @@ const VerticalNav = memo((props) => {
               </svg>
             </i>
             <span className="item-name">Attendance</span>
-            {/* <i className="right-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
-                            </svg>
-                        </i> */}
           </CustomToggle>
           <Accordion.Collapse eventKey="sidebar-user">
             <ul className="sub-nav">
