@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5001/api/v1/church";
+const API_URL = "/api/v1/church";
 
 // register church
 const registerChurch = async (churchData) => {
