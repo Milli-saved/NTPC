@@ -1,4 +1,4 @@
-import { useEffect, memo, Fragment, useContext } from "react";
+import React, { useEffect, memo, Fragment, useContext } from "react";
 import { useLocation, Outlet, Navigate } from "react-router-dom";
 
 //react-shepherd
@@ -20,7 +20,6 @@ import Footer from "../../components/partials/dashboard/FooterStyle/footer";
 
 //seetingoffCanvas
 import SettingOffCanvas from "../../components/setting/SettingOffCanvas";
-
 
 // Import selectors & action from setting store
 import * as SettingSelector from "../../store/setting/selectors";

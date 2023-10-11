@@ -1,4 +1,4 @@
-import { memo, Fragment } from "react";
+import React, { memo, Fragment } from "react";
 import RadioBtn from "../elements/radio-btn";
 
 // Images

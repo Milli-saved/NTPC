@@ -1,4 +1,4 @@
-import { memo, Fragment, useState } from "react";
+import React, { memo, Fragment, useState } from "react";
 import RadioBtn from "../elements/radio-btn";
 
 import _ from "lodash";

@@ -1,4 +1,4 @@
-import { memo, Fragment } from "react";
+import React, { memo, Fragment } from "react";
 
 import RadioBtn from "../elements/radio-btn";
 
@@ -14,7 +14,6 @@ const CardStyle = memo((props) => {
           defaultChecked={props.cardStyle}
           value="card-default"
         >
- 
           Default Navbar
         </RadioBtn>
       </div>
