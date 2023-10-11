@@ -4,6 +4,9 @@ const mongoose = require("mongoose");
 // User schema
 const membersSchema = mongoose.Schema(
   {
+    IdNumber: {
+      type: String,
+    },
     firstName: {
       type: String,
       required: true,
@@ -28,12 +31,15 @@ const membersSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    gender: {
+      type: String,
+    },
     role: {
       type: String,
       required: true,
     },
     phoneNumber: {
-      type: Number,
+      type: String,
       required: true,
     },
     martialStatus: {
@@ -88,7 +94,7 @@ const membersSchema = mongoose.Schema(
       type: Boolean,
     },
     deparment: [{ type: mongoose.Schema.Types.ObjectId, ref: "Deparment" }],
-    academicStatus: {
+    educationalBackground: {
       type: String,
     },
     profession: {

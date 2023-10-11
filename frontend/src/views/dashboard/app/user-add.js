@@ -72,33 +72,63 @@ const UserAdd = () => {
           const workBook = XLSX.read(bufferArray, { type: "buffer" });
           const workSheetName = workBook.SheetNames[0];
           const workSheet = workBook.Sheets[workSheetName];
-          workSheet.B1.w = "firstName";
-          workSheet.C1.w = "middleName";
-          workSheet.D1.w = "lastName";
-          workSheet.E1.w = "phoneNumber";
-          workSheet.F1.w = "gender"
-          workSheet.G1.w = "dateOfBirth";
-          workSheet.H1.w = "martialStatus";
-          workSheet.I1.w = "address"
-          workSheet.J1.w = "specificAddressName";
-          workSheet.K1.w = "emergencyContactFullName";
-          workSheet.L1.w = "emergencyContactPhonenumber";
-          workSheet.M1.w = "baptized";
-          workSheet.N1.w = "previousChurchName";
-          workSheet.O1.w = "previousChurchBranch";
-          workSheet.P1.w = "previousTeams";
-          workSheet.Q1.w = "knowOfChurch";
-          workSheet.R1.w = "timeOfArrival";
-          workSheet.S1.w = "learningDicipelshipClass";
-          workSheet.T1.w = "department";
-          workSheet.U1.w = "acadamicStatus";
-          workSheet.V1.w = "profession";
-          workSheet.W1.w = "workingInCompany";
-          workSheet.X1.w = "skills";
-          workSheet.Y1.w = "languages";
-          workSheet.Z1.w = "vision";
-          workSheet.AA1.w = "churchName";
-          workSheet.AB1.w = "churchBranch";
+          // workSheet.A1.w = "ID No"
+          // workSheet.C1.w = "firstName";
+          // workSheet.D1.w = "middleName";
+          // workSheet.E1.w = "lastName";
+          // workSheet.E1.w = "phoneNumber";
+          // workSheet.F1.w = "gender"
+          // workSheet.G1.w = "dateOfBirth";
+          // workSheet.H1.w = "martialStatus";
+          // workSheet.I1.w = "address"
+          // workSheet.J1.w = "specificAddressName";
+          // workSheet.K1.w = "emergencyContactFullName";
+          // workSheet.L1.w = "emergencyContactPhonenumber";
+          // workSheet.M1.w = "baptized";
+          // workSheet.N1.w = "previousChurchName";
+          // workSheet.O1.w = "previousChurchBranch";
+          // workSheet.P1.w = "previousTeams";
+          // workSheet.Q1.w = "knowOfChurch";
+          // workSheet.R1.w = "timeOfArrival";
+          // workSheet.S1.w = "learningDicipelshipClass";
+          // workSheet.T1.w = "department";
+          // workSheet.U1.w = "acadamicStatus";
+          // workSheet.V1.w = "profession";
+          // workSheet.W1.w = "workingInCompany";
+          // workSheet.X1.w = "skills";
+          // workSheet.Y1.w = "languages";
+          // workSheet.Z1.w = "vision";
+          // workSheet.AA1.w = "churchName";
+          // workSheet.AB1.w = "churchBranch";
+
+          workSheet.A1.w = "IdNumber";
+          workSheet.C1.w = "firstName";
+          workSheet.D1.w = "middleName";
+          workSheet.E1.w = "lastName";
+          workSheet.G1.w = "gender";
+          workSheet.H1.w = "phoneNumber";
+          workSheet.J1.w = "dateOfBirth";
+          workSheet.K1.w = "martialStatus";
+          workSheet.P1.w = "city";
+          workSheet.Q1.w = "subCity";
+          workSheet.R1.w = "woreda";
+          workSheet.S1.w = "houseNumber";
+          workSheet.T1.w = "specificAddressName";
+          workSheet.U1.w = "baptized";
+          workSheet.W1.w = "learningDicipleshipClass";
+          workSheet.X1.w = "emergencyContactFullName";
+          workSheet.Y1.w = "emergencyContactPhonenumber";
+          workSheet.Z1.w = "previousChurchName";
+          workSheet.AA1.w = "educationBackground";
+          workSheet.AB1.w = "profession";
+          workSheet.AC1.w = "workingInCompany";
+          workSheet.AD1.w = "timeOfArrival";
+          workSheet.AF1.w = "department";
+          workSheet.AI1.w = "knowOfOurChurch";
+          workSheet.AJ1.w = "previousTeams";
+          workSheet.AK1.w = "vision";
+          workSheet.AL1.w = "churchName";
+          workSheet.AM1.w = "churchBranch";
 
           const memberData = XLSX.utils.sheet_to_json(workSheet);
           resolve(memberData);
@@ -126,35 +156,43 @@ const UserAdd = () => {
     for (const singleMember of memberData) {
       const ExcelMember = {
         ...memberData,
+        IdNumber: singleMember.IdNumber,
         firstName: singleMember.firstName,
         middleName: singleMember.middleName,
         lastName: singleMember.lastName,
         userName: singleMember.firstName + singleMember.middleName,
         password: singleMember.firstName + singleMember.middleName,
+        gender: singleMember.gender,
         phoneNumber: singleMember.phoneNumber,
         dateOfBirth: singleMember.dateOfBirth,
         martialStatus: singleMember.martialStatus,
+        city: singleMember.city,
+        subCity: singleMember.subCity,
+        woreda: singleMember.woreda,
+        houseNumber: singleMember.houseNumber,
         specificAddressName: singleMember.specificAddressName,
-        emergencyContactFullName: singleMember.emergencyContactFullName,
-        emergencyContactPhonenumber: singleMember.emergencyContactPhonenumber,
         baptized: singleMember.baptized === "yes" ? true : false,
-        previousChurchName: singleMember.previousChurchName,
-        previousChurchBranch: singleMember.previousChurchBranch,
-        previousTeams: singleMember.previousTeams,
-        knowOfOurChurch: singleMember.knowOfOurChurch,
-        timeOfArrival: singleMember.timeOfArrival,
         learningDicipleshipClass:
           singleMember.learningDicipleshipClass === "yes" ? true : false,
-        deparment: singleMember.deparment,
+        emergencyContactFullName: singleMember.emergencyContactFullName,
+        emergencyContactPhonenumber: singleMember.emergencyContactPhonenumber,
+        previousChurchName: singleMember.previousChurchName,
+        educationalBackground: singleMember.educationalBackground,
         profession: singleMember.profession,
         workingInCompany: singleMember.workingInCompany,
-        skills: singleMember.skills,
-        languages: singleMember.languages,
+        timeOfArrival: singleMember.timeOfArrival,
+        deparment: singleMember.department,
+        knowOfOurChurch: singleMember.knowOfOurChurch,
+        previousTeams: singleMember.previousTeams,
         vision: singleMember.vision,
         churchName: singleMember.churchName,
         churchBranch: singleMember.churchBranch,
         onlineMember: false,
         role: "member",
+
+        // previousChurchBranch: singleMember.previousChurchBranch,
+        // skills: singleMember.skills,
+        // languages: singleMember.languages,
       };
       const memberDataExcel = { ...ExcelMember };
       dispatch(register(memberDataExcel));
