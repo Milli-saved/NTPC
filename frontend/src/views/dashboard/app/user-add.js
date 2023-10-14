@@ -153,9 +153,10 @@ const UserAdd = () => {
   };
 
   const inserExcelData = () => {
+    // console.log("what is happening: ", memberData);
+
     for (const singleMember of memberData) {
       const ExcelMember = {
-        ...memberData,
         IdNumber: singleMember.IdNumber,
         firstName: singleMember.firstName,
         middleName: singleMember.middleName,
@@ -189,10 +190,6 @@ const UserAdd = () => {
         churchBranch: singleMember.churchBranch,
         onlineMember: false,
         role: "member",
-
-        // previousChurchBranch: singleMember.previousChurchBranch,
-        // skills: singleMember.skills,
-        // languages: singleMember.languages,
       };
       const memberDataExcel = { ...ExcelMember };
       dispatch(register(memberDataExcel));
@@ -354,7 +351,7 @@ const UserAdd = () => {
                         top: "69%",
                       }}
                     >
-                      <div
+                      <button
                         className="admin-sidebar-link"
                         onClick={inserExcelData}
                       >
@@ -365,7 +362,7 @@ const UserAdd = () => {
                             icon_name="edit"
                           />
                         </div>
-                      </div>
+                      </button>
                       <p
                         id="errMsg"
                         className={errMsg ? "errMsg" : "offscreen"}

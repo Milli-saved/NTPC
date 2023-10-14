@@ -61,7 +61,7 @@ const membersSchema = mongoose.Schema(
         type: String,
       },
       woreda: {
-        type: Number,
+        type: String,
       },
       houseNumber: {
         type: String,
@@ -93,7 +93,7 @@ const membersSchema = mongoose.Schema(
     learningDicipleshipClass: {
       type: Boolean,
     },
-    deparment: [{ type: mongoose.Schema.Types.ObjectId, ref: "Deparment" }],
+    department: [{ type: mongoose.Schema.Types.ObjectId, ref: "Deparment" }],
     educationalBackground: {
       type: String,
     },
