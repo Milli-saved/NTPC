@@ -8,6 +8,8 @@ const initialState = {
   member: member ? member : null,
   isError: false,
   isSuccess: false,
+  isSuccessExcel: false,
+  isErrorExcel: false,
   isLoading: false,
   message: "",
 };
@@ -17,7 +19,26 @@ export const register = createAsyncThunk(
   "member/register",
   async (memberData, thunkAPI) => {
     try {
-      console.log("the req got here.," , memberData)
+      console.log("the req got here.,", memberData);
+      return await memberServices.register(memberData);
+    } catch (error) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+      return thunkAPI.rejectWithValue(message);
+    }
+  }
+);
+
+// Register member from excel file
+export const registerExcel = createAsyncThunk(
+  "member/registerExcel",
+  async (memberData, thunkAPI) => {
+    try {
+      console.log("the req got here.,", memberData);
       return await memberServices.register(memberData);
     } catch (error) {
       const message =
@@ -130,6 +151,20 @@ export const memberSlice = createSlice({
         state.isLoading = false;
         state.isError = true;
         state.message = action.payload;
+        state.member = null;
+      }) //register excel
+      .addCase(registerExcel.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(registerExcel.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isSuccessExcel = true;
+        // state.member = action.payload;
+      })
+      .addCase(registerExcel.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isErrorExcel = true;
+        state.messageExcel = action.payload;
         state.member = null;
       })
       //login

@@ -11,7 +11,7 @@ import avatars3 from "../../../assets/images/avatars/avtar_2.png";
 import avatars4 from "../../../assets/images/avatars/avtar_3.png";
 import avatars5 from "../../../assets/images/avatars/avtar_4.png";
 import avatars6 from "../../../assets/images/avatars/avtar_5.png";
-import { register } from "../../../store/member/memberSlice";
+import { register, registerExcel } from "../../../store/member/memberSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const SidebarItem = (props) => {
@@ -47,13 +47,15 @@ const UserAdd = () => {
     setMessage("");
   };
 
-  const { isSuccess, isError } = useSelector((state) => state.member);
+  const { isSuccess, isError, isSuccessExcel, isErrorExcel } = useSelector(
+    (state) => state.member
+  );
   // if (isSuccess) {
   //   resetFileInput();
   // }
 
   useEffect(() => {
-    if (isSuccess) {
+    if (isSuccessExcel) {
       resetFileInput();
     }
     if (isError) {
@@ -72,35 +74,6 @@ const UserAdd = () => {
           const workBook = XLSX.read(bufferArray, { type: "buffer" });
           const workSheetName = workBook.SheetNames[0];
           const workSheet = workBook.Sheets[workSheetName];
-          // workSheet.A1.w = "ID No"
-          // workSheet.C1.w = "firstName";
-          // workSheet.D1.w = "middleName";
-          // workSheet.E1.w = "lastName";
-          // workSheet.E1.w = "phoneNumber";
-          // workSheet.F1.w = "gender"
-          // workSheet.G1.w = "dateOfBirth";
-          // workSheet.H1.w = "martialStatus";
-          // workSheet.I1.w = "address"
-          // workSheet.J1.w = "specificAddressName";
-          // workSheet.K1.w = "emergencyContactFullName";
-          // workSheet.L1.w = "emergencyContactPhonenumber";
-          // workSheet.M1.w = "baptized";
-          // workSheet.N1.w = "previousChurchName";
-          // workSheet.O1.w = "previousChurchBranch";
-          // workSheet.P1.w = "previousTeams";
-          // workSheet.Q1.w = "knowOfChurch";
-          // workSheet.R1.w = "timeOfArrival";
-          // workSheet.S1.w = "learningDicipelshipClass";
-          // workSheet.T1.w = "department";
-          // workSheet.U1.w = "acadamicStatus";
-          // workSheet.V1.w = "profession";
-          // workSheet.W1.w = "workingInCompany";
-          // workSheet.X1.w = "skills";
-          // workSheet.Y1.w = "languages";
-          // workSheet.Z1.w = "vision";
-          // workSheet.AA1.w = "churchName";
-          // workSheet.AB1.w = "churchBranch";
-
           workSheet.A1.w = "IdNumber";
           workSheet.C1.w = "firstName";
           workSheet.D1.w = "middleName";
@@ -182,7 +155,7 @@ const UserAdd = () => {
         profession: singleMember.profession,
         workingInCompany: singleMember.workingInCompany,
         timeOfArrival: singleMember.timeOfArrival,
-        deparment: singleMember.department,
+        department: singleMember.department,
         knowOfOurChurch: singleMember.knowOfOurChurch,
         previousTeams: singleMember.previousTeams,
         vision: singleMember.vision,
@@ -192,7 +165,7 @@ const UserAdd = () => {
         role: "member",
       };
       const memberDataExcel = { ...ExcelMember };
-      dispatch(register(memberDataExcel));
+      dispatch(registerExcel(memberDataExcel));
     }
   };
 
@@ -288,6 +261,11 @@ const UserAdd = () => {
               <Card.Header className="d-flex justify-content-between">
                 <div className="header-title">
                   <h5 className="card-title">Add New User From Excel File.</h5>
+                  {isSuccessExcel ? (
+                    <p style={{ color: "green" }}>Successfully added.</p>
+                  ) : (
+                    ""
+                  )}
                 </div>
               </Card.Header>
               <Card.Body>
