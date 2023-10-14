@@ -169,7 +169,9 @@ const deleteMember = asycnHandler(async (req, res) => {
 
 // Get all members
 const getAllMembers = asycnHandler(async (req, res) => {
-  const member = await Member.find({}).select("-password");
+  const member = await Member.find({})
+    .select("-password")
+    .populate("department");
   if (member) {
     res.status(200).json({
       member,

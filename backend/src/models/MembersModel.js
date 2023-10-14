@@ -93,7 +93,7 @@ const membersSchema = mongoose.Schema(
     learningDicipleshipClass: {
       type: Boolean,
     },
-    department: { type: mongoose.Schema.Types.ObjectId, ref: "Deparment" },
+    department: { type: mongoose.Schema.Types.ObjectId, ref: "Department" },
     educationalBackground: {
       type: String,
     },
