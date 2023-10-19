@@ -1,18 +1,23 @@
 import * as React from "react";
 import { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { Modal, Button, Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { PersonAddTwoTone, Settings } from "@material-ui/icons";
-import { getAllMembers, updateMember } from "../../../store/member/memberSlice";
+import { PersonAddTwoTone, Settings, Edit } from "@material-ui/icons";
+import {
+  getAllMembers,
+  setMemberEdited,
+  updateMember,
+} from "../../../store/member/memberSlice";
 import Loader from "../../../components/Loader";
 import { Grid, Typography } from "@mui/material";
 import { getOneAccess, updateAccess } from "../../../store/access/accessSlice";
 
 export default function CollapsibleTable() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(getAllMembers());
@@ -47,6 +52,11 @@ export default function CollapsibleTable() {
     setShow1(true);
     setMemberId(row._id);
     setSelectedMember(row);
+  };
+
+  const actionHandler2 = (row) => {
+    dispatch(setMemberEdited(row));
+    navigate("/dashboard/app/user-profile");
   };
 
   const [canAddMembers, setCanAddMember] = useState(
@@ -148,6 +158,20 @@ export default function CollapsibleTable() {
           <Box width="50%" p="5px" display="flex">
             <Button variant="outlined" onClick={() => actionHandler1(row)}>
               <PersonAddTwoTone />
+            </Button>
+          </Box>
+        );
+      },
+    },
+    {
+      field: "action2",
+      headerName: "Update Data",
+      width: 150,
+      renderCell: ({ row }) => {
+        return (
+          <Box width="50%" p="5px" display="flex">
+            <Button variant="outlined" onClick={() => actionHandler2(row)}>
+              <Edit />
             </Button>
           </Box>
         );

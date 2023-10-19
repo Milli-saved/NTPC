@@ -6,6 +6,7 @@ const member = JSON.parse(localStorage.getItem("member"));
 const initialState = {
   members: [],
   member: member ? member : null,
+  memberEditing: null,
   isError: false,
   isSuccess: false,
   isSuccessExcel: false,
@@ -135,6 +136,10 @@ export const memberSlice = createSlice({
       state.isSuccess = false;
       state.message = "";
     },
+    setMemberEdited: (state, action) => {
+      console.log("this is from slice: ", action);
+      state.memberEditing = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -235,5 +240,5 @@ export const memberSlice = createSlice({
   },
 });
 
-export const { reset } = memberSlice.actions;
+export const { reset, setMemberEdited } = memberSlice.actions;
 export default memberSlice.reducer;
