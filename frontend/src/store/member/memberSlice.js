@@ -20,7 +20,6 @@ export const register = createAsyncThunk(
   "member/register",
   async (memberData, thunkAPI) => {
     try {
-      console.log("the req got here.,", memberData);
       return await memberServices.register(memberData);
     } catch (error) {
       const message =
@@ -39,7 +38,6 @@ export const registerExcel = createAsyncThunk(
   "member/registerExcel",
   async (memberData, thunkAPI) => {
     try {
-      console.log("the req got here.,", memberData);
       return await memberServices.register(memberData);
     } catch (error) {
       const message =
@@ -137,7 +135,6 @@ export const memberSlice = createSlice({
       state.message = "";
     },
     setMemberEdited: (state, action) => {
-      console.log("this is from slice: ", action);
       state.memberEditing = action.payload;
     },
   },

@@ -126,7 +126,6 @@ const UserAdd = () => {
   };
 
   const inserExcelData = () => {
-    // console.log("what is happening: ", memberData);
 
     for (const singleMember of memberData) {
       const ExcelMember = {
