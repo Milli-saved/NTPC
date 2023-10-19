@@ -137,19 +137,15 @@ const Widgetcard = memo((props) => {
                           <h6 className="pb-2">
                             Name: {eachMember.firstName} {eachMember.middleName}{" "}
                           </h6>
-                          <h6 className="pb-2">Gender: {eachMember.gender}</h6>
                           <h6 className="mb-0">
-                            Department:{" "}
-                            {
-                              eachMember.department && eachMember.department
-                                .departmentName
-                            }
+                            Phone Number:{" "}
+                            {eachMember.phoneNumber && eachMember.phoneNumber}
                           </h6>
                         </div>
                         <div
                           style={{
                             position: "absolute",
-                            top: "45%",
+                            top: "30%",
                             right: "3.5%",
                           }}
                         >

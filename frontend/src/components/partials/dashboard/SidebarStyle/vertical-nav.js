@@ -405,7 +405,8 @@ const VerticalNav = memo((props) => {
           <Accordion.Collapse eventKey="sidebar-user">
             <ul className="sub-nav">
               <li className="nav-item">
-                <Link disabled
+                <Link
+                  disabled
                   className={`${
                     location.pathname === "/dashboard/app/attend-list"
                       ? "active"
@@ -545,7 +546,7 @@ const VerticalNav = memo((props) => {
                     </svg>
                   </i>
                   <i className="sidenav-mini-icon"> U </i>
-                  <span className="item-name">Admin Profile</span>
+                  <span className="item-name">Member Profile</span>
                 </Link>
               </li>
               <li className="nav-item">
@@ -578,7 +579,7 @@ const VerticalNav = memo((props) => {
                   <span className="item-name">Add Member</span>
                 </Link>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <Link
                   className={`${
                     location.pathname === "/dashboard/app/user-list"
@@ -607,7 +608,7 @@ const VerticalNav = memo((props) => {
                   <i className="sidenav-mini-icon"> U </i>
                   <span className="item-name">Admin List</span>
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </Accordion.Collapse>
         </Accordion.Item>
@@ -641,7 +642,7 @@ const VerticalNav = memo((props) => {
             <span className="item-name">QrCode</span>
           </Link>
         </li>
-        <li className="nav-item">
+        {/* <li className="nav-item">
           <Link
             className={`${
               location.pathname === "/dashboard/widget/widgetbasic"
@@ -670,8 +671,8 @@ const VerticalNav = memo((props) => {
             </i>
             <span className="item-name">Contact</span>
           </Link>
-        </li>
-        <li className="nav-item">
+        </li> */}
+        {/* <li className="nav-item">
           <Link
             className={`${
               location.pathname === "/dashboard/form/form-element"
@@ -702,7 +703,7 @@ const VerticalNav = memo((props) => {
             </i>
             <span className="item-name">About</span>
           </Link>
-        </li>
+        </li> */}
       </Accordion>
     </Fragment>
   );
